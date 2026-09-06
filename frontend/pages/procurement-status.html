@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Frontend-only hackathon prototype for farmer-centric paddy procurement"
+    />
+    <title>Procurement Status — PaddySetu</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/utility.css" />
+    <link rel="stylesheet" href="../css/queue.css" />
+  </head>
+  <body>
+    <div data-header></div>
+    <main class="page-main">
+      <div class="container">
+        <div class="eyebrow">Step 9 • Procurement Centre Status</div>
+        <h1 class="page-title">Track procurement progress</h1>
+        <div class="grid-2">
+          <section class="card">
+            <div class="status-timeline" id="statusTimeline"></div>
+            <div class="button-row">
+              <a class="btn btn-secondary" href="live-queue.html"
+                >Back to Live Queue</a
+              ><button class="btn btn-primary" id="advanceStatus">
+                Advance Demo Status
+              </button>
+            </div>
+          </section>
+          <aside class="card">
+            <h2 class="section-title">Centre guidance</h2>
+            <p>
+              Keep your token and farmer ID ready for verification. This page
+              simulates centre-side processing for the hackathon demonstration.
+            </p>
+            <div id="statusAction" class="info"></div>
+          </aside>
+        </div>
+      </div>
+    </main>
+    <script src="../js/storage.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/queue.js"></script>
+  </body>
+</html>

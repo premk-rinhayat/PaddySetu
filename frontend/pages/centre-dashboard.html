@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    />
+
+    <meta
+        name="description"
+        content="PaddySetu procurement centre operator dashboard"
+    />
+
+    <title>Centre Dashboard — PaddySetu</title>
+
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/utility.css" />
+    <link rel="stylesheet" href="../css/centre.css" />
+</head>
+
+<body>
+
+    <div class="centre-dashboard-layout">
+
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+        <aside class="centre-sidebar">
+
+            <a
+                href="centre-dashboard.html"
+                class="centre-dashboard-brand"
+            >
+
+                <div class="centre-dashboard-brand-icon">
+                    🌾
+                </div>
+
+                <div>
+                    <strong>PaddySetu</strong>
+                    <span>Centre Portal</span>
+                </div>
+
+            </a>
+
+
+            <nav class="centre-sidebar-nav">
+
+                <a
+                    href="centre-dashboard.html"
+                    class="centre-nav-link active"
+                >
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+
+                <a
+                    href="centre-queue.html"
+                    class="centre-nav-link"
+                >
+                    <span>👥</span>
+                    Live Queue
+                </a>
+
+
+                <a
+                    href="centre-processing.html"
+                    class="centre-nav-link"
+                >
+                    <span>⚖</span>
+                    Processing
+                </a>
+
+
+                <a
+                    href="centre-slots.html"
+                    class="centre-nav-link"
+                >
+                    <span>📅</span>
+                    Slots
+                </a>
+
+
+                <a
+                    href="centre-analytics.html"
+                    class="centre-nav-link"
+                >
+                    <span>📊</span>
+                    Analytics
+                </a>
+
+            </nav>
+
+
+            <div class="centre-sidebar-bottom">
+
+                <div class="centre-operator-mini">
+
+                    <div class="centre-mini-avatar">
+                        OP
+                    </div>
+
+                    <div>
+                        <strong>Centre Operator</strong>
+                        <span>Berasia Centre</span>
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="centre-sidebar-logout"
+                    id="centreLogoutButton"
+                >
+                    ↪ Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =====================================================
+             MAIN CONTENT
+        ====================================================== -->
+
+        <main class="centre-dashboard-main">
+
+
+            <!-- =================================================
+                 HEADER
+            ================================================== -->
+
+            <header class="centre-dashboard-header">
+
+                <div>
+
+                    <p class="centre-dashboard-eyebrow">
+                        PROCUREMENT CENTRE / उपार्जन केंद्र
+                    </p>
+
+                    <h1>
+                        Berasia Procurement Centre
+                    </h1>
+
+                    <p>
+                        Manage today's farmer queue and procurement operations.
+                    </p>
+
+                </div>
+
+
+                <div class="centre-header-actions">
+
+                    <div class="centre-live-status">
+
+                        <span class="centre-live-dot"></span>
+
+                        Centre Active
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="centre-refresh-button"
+                        id="centreRefreshButton"
+                    >
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 TOP STATS
+            ================================================== -->
+
+            <section class="centre-dashboard-stats">
+
+
+                <!-- Current Token -->
+
+                <article class="centre-dashboard-stat-card">
+
+                    <div class="centre-stat-top">
+
+                        <span class="centre-stat-icon">
+                            🎟
+                        </span>
+
+                        <span class="centre-stat-tag processing">
+                            Processing
+                        </span>
+
+                    </div>
+
+
+                    <div class="centre-stat-label">
+                        Current Token
+                    </div>
+
+                    <div
+                        class="centre-stat-value"
+                        id="currentTokenValue"
+                    >
+                        P-018
+                    </div>
+
+                    <p>
+                        Farmer currently being processed
+                    </p>
+
+                </article>
+
+
+
+                <!-- Waiting Farmers -->
+
+                <article class="centre-dashboard-stat-card">
+
+                    <div class="centre-stat-top">
+
+                        <span class="centre-stat-icon">
+                            👥
+                        </span>
+
+                        <span class="centre-stat-tag">
+                            Live Queue
+                        </span>
+
+                    </div>
+
+
+                    <div class="centre-stat-label">
+                        Waiting Farmers
+                    </div>
+
+                    <div
+                        class="centre-stat-value"
+                        id="waitingFarmersValue"
+                    >
+                        8
+                    </div>
+
+                    <p>
+                        Farmers waiting after current token
+                    </p>
+
+                </article>
+
+
+
+                <!-- Pending Weight -->
+
+                <article class="centre-dashboard-stat-card">
+
+                    <div class="centre-stat-top">
+
+                        <span class="centre-stat-icon">
+                            ⚖
+                        </span>
+
+                        <span class="centre-stat-tag warning">
+                            Estimated
+                        </span>
+
+                    </div>
+
+
+                    <div class="centre-stat-label">
+                        Pending Quantity
+                    </div>
+
+                    <div
+                        class="centre-stat-value"
+                        id="pendingWeightValue"
+                    >
+                        126 Q
+                    </div>
+
+                    <p>
+                        Expected crop quantity in queue
+                    </p>
+
+                </article>
+
+
+
+                <!-- Completed -->
+
+                <article class="centre-dashboard-stat-card">
+
+                    <div class="centre-stat-top">
+
+                        <span class="centre-stat-icon">
+                            ✓
+                        </span>
+
+                        <span class="centre-stat-tag success">
+                            Today
+                        </span>
+
+                    </div>
+
+
+                    <div class="centre-stat-label">
+                        Completed Today
+                    </div>
+
+                    <div
+                        class="centre-stat-value"
+                        id="completedTodayValue"
+                    >
+                        14
+                    </div>
+
+                    <p>
+                        Successful procurements completed
+                    </p>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 MAIN GRID
+            ================================================== -->
+
+            <section class="centre-dashboard-grid">
+
+
+                <!-- =================================================
+                     CURRENT PROCESSING
+                ================================================== -->
+
+                <article class="centre-dashboard-card centre-current-card">
+
+                    <div class="centre-card-heading">
+
+                        <div>
+
+                            <p class="centre-dashboard-eyebrow">
+                                CURRENT PROCESSING
+                            </p>
+
+                            <h2>
+                                Token P-018
+                            </h2>
+
+                        </div>
+
+
+                        <span class="centre-current-status">
+                            Quality Check
+                        </span>
+
+                    </div>
+
+
+                    <div class="centre-current-farmer">
+
+                        <div class="centre-farmer-avatar">
+                            RP
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Ramesh Patel
+                            </strong>
+
+                            <span>
+                                Farmer ID: MP-BPL-FRM-2026-10245
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="centre-processing-info-grid">
+
+                        <div>
+                            <span>Crop</span>
+                            <strong>Paddy</strong>
+                        </div>
+
+                        <div>
+                            <span>Expected Quantity</span>
+                            <strong>15–20 Q</strong>
+                        </div>
+
+                        <div>
+                            <span>Arrival Status</span>
+                            <strong class="centre-green-text">
+                                Arrived
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Current Stage</span>
+                            <strong>
+                                Quality Check
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="centre-processing.html"
+                        class="centre-primary-action"
+                    >
+                        Continue Processing
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     CENTRE STATUS
+                ================================================== -->
+
+                <article class="centre-dashboard-card">
+
+                    <div class="centre-card-heading">
+
+                        <div>
+
+                            <p class="centre-dashboard-eyebrow">
+                                CENTRE STATUS
+                            </p>
+
+                            <h2>
+                                Today's Operations
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="centre-operation-list">
+
+
+                        <div class="centre-operation-row">
+
+                            <span>
+                                Processing Speed
+                            </span>
+
+                            <strong>
+                                20 Q/hr
+                            </strong>
+
+                        </div>
+
+
+                        <div class="centre-operation-row">
+
+                            <span>
+                                Queue Condition
+                            </span>
+
+                            <strong class="centre-orange-text">
+                                High Load
+                            </strong>
+
+                        </div>
+
+
+                        <div class="centre-operation-row">
+
+                            <span>
+                                Total Tokens Today
+                            </span>
+
+                            <strong>
+                                31
+                            </strong>
+
+                        </div>
+
+
+                        <div class="centre-operation-row">
+
+                            <span>
+                                Farmers Arrived
+                            </span>
+
+                            <strong>
+                                19
+                            </strong>
+
+                        </div>
+
+
+                        <div class="centre-operation-row">
+
+                            <span>
+                                Paddy Procured
+                            </span>
+
+                            <strong>
+                                286 Q
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     LIVE QUEUE
+                ================================================== -->
+
+                <article class="centre-dashboard-card centre-queue-card">
+
+                    <div class="centre-card-heading">
+
+                        <div>
+
+                            <p class="centre-dashboard-eyebrow">
+                                LIVE QUEUE
+                            </p>
+
+                            <h2>
+                                Upcoming Farmers
+                            </h2>
+
+                        </div>
+
+
+                        <a
+                            href="centre-queue.html"
+                            class="centre-text-link"
+                        >
+                            View Full Queue
+                        </a>
+
+                    </div>
+
+
+                    <div class="centre-queue-table-wrap">
+
+                        <table class="centre-queue-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Token</th>
+                                    <th>Farmer</th>
+                                    <th>Expected Qty.</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        <strong>P-019</strong>
+                                    </td>
+
+                                    <td>
+                                        Suresh Verma
+                                    </td>
+
+                                    <td>
+                                        20–25 Q
+                                    </td>
+
+                                    <td>
+                                        <span class="queue-status arrived">
+                                            Arrived
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <strong>P-020</strong>
+                                    </td>
+
+                                    <td>
+                                        Mahesh Patel
+                                    </td>
+
+                                    <td>
+                                        10–15 Q
+                                    </td>
+
+                                    <td>
+                                        <span class="queue-status waiting">
+                                            Waiting
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <strong>P-021</strong>
+                                    </td>
+
+                                    <td>
+                                        Rajesh Yadav
+                                    </td>
+
+                                    <td>
+                                        14–18 Q
+                                    </td>
+
+                                    <td>
+                                        <span class="queue-status waiting">
+                                            Waiting
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <strong>P-022</strong>
+                                    </td>
+
+                                    <td>
+                                        Dinesh Kushwaha
+                                    </td>
+
+                                    <td>
+                                        8–12 Q
+                                    </td>
+
+                                    <td>
+                                        <span class="queue-status approaching">
+                                            Approaching
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     QUICK ACTIONS
+                ================================================== -->
+
+                <article class="centre-dashboard-card">
+
+                    <div class="centre-card-heading">
+
+                        <div>
+
+                            <p class="centre-dashboard-eyebrow">
+                                OPERATOR TOOLS
+                            </p>
+
+                            <h2>
+                                Quick Actions
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="centre-quick-actions">
+
+
+                        <a
+                            href="centre-queue.html"
+                            class="centre-action-tile"
+                        >
+
+                            <span class="centre-action-icon">
+                                👥
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Manage Queue
+                                </strong>
+
+                                <span>
+                                    View waiting farmers
+                                </span>
+                            </div>
+
+                            <span>→</span>
+
+                        </a>
+
+
+                        <a
+                            href="centre-processing.html"
+                            class="centre-action-tile"
+                        >
+
+                            <span class="centre-action-icon">
+                                ⚖
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Process Farmer
+                                </strong>
+
+                                <span>
+                                    Verification to weighing
+                                </span>
+                            </div>
+
+                            <span>→</span>
+
+                        </a>
+
+
+                        <a
+                            href="centre-slots.html"
+                            class="centre-action-tile"
+                        >
+
+                            <span class="centre-action-icon">
+                                📅
+                            </span>
+
+                            <div>
+                                <strong>
+                                    View Slots
+                                </strong>
+
+                                <span>
+                                    Today's bookings
+                                </span>
+                            </div>
+
+                            <span>→</span>
+
+                        </a>
+
+
+                        <a
+                            href="centre-analytics.html"
+                            class="centre-action-tile"
+                        >
+
+                            <span class="centre-action-icon">
+                                📊
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Centre Analytics
+                                </strong>
+
+                                <span>
+                                    Daily performance
+                                </span>
+                            </div>
+
+                            <span>→</span>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     QUEUE WEIGHT
+                ================================================== -->
+
+                <article class="centre-dashboard-card">
+
+                    <div class="centre-card-heading">
+
+                        <div>
+
+                            <p class="centre-dashboard-eyebrow">
+                                QUANTITY-AWARE QUEUE
+                            </p>
+
+                            <h2>
+                                Pending Weight Distribution
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="centre-weight-summary">
+
+                        <div class="centre-weight-main">
+
+                            <span>
+                                Total Estimated Pending
+                            </span>
+
+                            <strong>
+                                126 Quintal
+                            </strong>
+
+                        </div>
+
+
+                        <div class="centre-weight-bar">
+
+                            <div class="centre-weight-fill"></div>
+
+                        </div>
+
+
+                        <div class="centre-weight-footer">
+
+                            <span>
+                                Processing speed: 20 Q/hr
+                            </span>
+
+                            <span>
+                                Approx. queue workload: 6.3 hrs
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="centre-helper-text">
+                        Demo calculation uses average expected quantity
+                        from each farmer's declared minimum–maximum range.
+                    </p>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     RECENT ACTIVITY
+                ================================================== -->
+
+                <article class="centre-dashboard-card centre-recent-card">
+
+                    <div class="centre-card-heading">
+
+                        <div>
+
+                            <p class="centre-dashboard-eyebrow">
+                                ACTIVITY
+                            </p>
+
+                            <h2>
+                                Recent Centre Activity
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="centre-activity-list">
+
+
+                        <div class="centre-activity-item">
+
+                            <span class="centre-activity-dot success"></span>
+
+                            <div>
+
+                                <strong>
+                                    Token P-017 procurement completed
+                                </strong>
+
+                                <span>
+                                    Final weight: 16.8 Quintal
+                                </span>
+
+                            </div>
+
+                            <time>
+                                6 min ago
+                            </time>
+
+                        </div>
+
+
+                        <div class="centre-activity-item">
+
+                            <span class="centre-activity-dot info"></span>
+
+                            <div>
+
+                                <strong>
+                                    Token P-019 farmer arrived
+                                </strong>
+
+                                <span>
+                                    Waiting for current token completion
+                                </span>
+
+                            </div>
+
+                            <time>
+                                9 min ago
+                            </time>
+
+                        </div>
+
+
+                        <div class="centre-activity-item">
+
+                            <span class="centre-activity-dot warning"></span>
+
+                            <div>
+
+                                <strong>
+                                    Queue entered high-load condition
+                                </strong>
+
+                                <span>
+                                    Estimated pending quantity crossed 120 Q
+                                </span>
+
+                            </div>
+
+                            <time>
+                                18 min ago
+                            </time>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <p class="centre-dashboard-footer">
+                PaddySetu hackathon prototype • All centre, farmer,
+                queue and procurement values shown here are mock/demo data.
+            </p>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/centre-dashboard.js"></script>
+
+</body>
+
+</html>

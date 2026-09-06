@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    />
+
+    <meta
+        name="description"
+        content="Centre operator login for PaddySetu procurement prototype"
+    />
+
+    <title>Centre Login — PaddySetu</title>
+
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/utility.css" />
+    <link rel="stylesheet" href="../css/centre.css" />
+</head>
+
+<body>
+
+    <main class="centre-login-page">
+
+        <div class="centre-login-layout">
+
+            <!-- LEFT PANEL -->
+
+            <section class="centre-info-panel">
+
+                <a href="../index.html" class="centre-brand">
+
+                    <div class="centre-brand-icon">
+                        🌾
+                    </div>
+
+                    <div>
+                        <strong>PaddySetu</strong>
+                        <span>Digital Procurement Prototype</span>
+                    </div>
+
+                </a>
+
+
+                <div class="centre-info-content">
+
+                    <span class="centre-eyebrow">
+                        PROCUREMENT CENTRE PORTAL
+                    </span>
+
+                    <h1>
+                        Manage Farmer Procurement Queue
+                    </h1>
+
+                    <p>
+                        Process farmer tokens, update procurement stages
+                        and monitor centre workload from one dashboard.
+                    </p>
+
+
+                    <div class="centre-feature-list">
+
+                        <div class="centre-feature">
+
+                            <div class="centre-feature-icon">
+                                👥
+                            </div>
+
+                            <div>
+                                <strong>Live Queue Management</strong>
+                                <span>
+                                    View and process waiting farmer tokens
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="centre-feature">
+
+                            <div class="centre-feature-icon">
+                                ⚖
+                            </div>
+
+                            <div>
+                                <strong>Procurement Processing</strong>
+                                <span>
+                                    Update verification, quality and weighing stages
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="centre-feature">
+
+                            <div class="centre-feature-icon">
+                                📊
+                            </div>
+
+                            <div>
+                                <strong>Centre Monitoring</strong>
+                                <span>
+                                    Monitor queue load and daily procurement
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <p class="centre-prototype-note">
+                    Hackathon prototype • Mock centre operator access
+                </p>
+
+            </section>
+
+
+            <!-- RIGHT LOGIN PANEL -->
+
+            <section class="centre-login-panel">
+
+                <div class="centre-login-box">
+
+                    <a
+                        href="../index.html"
+                        class="centre-back-link"
+                    >
+                        ← Back to Home
+                    </a>
+
+
+                    <div class="centre-login-heading">
+
+                        <div class="centre-login-symbol">
+                            🏢
+                        </div>
+
+                        <span class="centre-eyebrow">
+                            CENTRE OPERATOR LOGIN
+                        </span>
+
+                        <h2>
+                            Welcome Operator
+                        </h2>
+
+                        <p>
+                            Sign in to manage procurement operations
+                            at your assigned centre.
+                        </p>
+
+                    </div>
+
+
+                    <form
+                        id="centreLoginForm"
+                        class="centre-login-form"
+                    >
+
+                        <!-- Centre ID -->
+
+                        <div class="centre-form-group">
+
+                            <label for="centreId">
+                                Centre ID
+                            </label>
+
+                            <div class="centre-input-wrap">
+
+                                <span class="centre-input-icon">
+                                    🏢
+                                </span>
+
+                                <input
+                                    type="text"
+                                    id="centreId"
+                                    placeholder="Enter Centre ID"
+                                    autocomplete="username"
+                                    required
+                                />
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Operator ID -->
+
+                        <div class="centre-form-group">
+
+                            <label for="operatorId">
+                                Operator ID
+                            </label>
+
+                            <div class="centre-input-wrap">
+
+                                <span class="centre-input-icon">
+                                    👤
+                                </span>
+
+                                <input
+                                    type="text"
+                                    id="operatorId"
+                                    placeholder="Enter Operator ID"
+                                    required
+                                />
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Password -->
+
+                        <div class="centre-form-group">
+
+                            <label for="centrePassword">
+                                Password
+                            </label>
+
+                            <div class="centre-input-wrap">
+
+                                <span class="centre-input-icon">
+                                    🔒
+                                </span>
+
+                                <input
+                                    type="password"
+                                    id="centrePassword"
+                                    placeholder="Enter password"
+                                    autocomplete="current-password"
+                                    required
+                                />
+
+                                <button
+                                    type="button"
+                                    class="centre-password-toggle"
+                                    id="centrePasswordToggle"
+                                    aria-label="Show password"
+                                >
+                                    👁
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="centreLoginError"
+                            class="centre-login-error"
+                        ></div>
+
+
+                        <button
+                            type="submit"
+                            class="centre-login-button"
+                        >
+                            Login to Centre Dashboard
+                            <span>→</span>
+                        </button>
+
+                    </form>
+
+
+                    <!-- DEMO CREDENTIALS -->
+
+                    <div class="centre-demo-box">
+
+                        <div class="centre-demo-title">
+                            DEMO LOGIN
+                        </div>
+
+
+                        <div class="centre-demo-row">
+                            <span>Centre</span>
+                            <strong>Berasia Procurement Centre</strong>
+                        </div>
+
+
+                        <div class="centre-demo-row">
+                            <span>Centre ID</span>
+                            <strong>BPC-01</strong>
+                        </div>
+
+
+                        <div class="centre-demo-row">
+                            <span>Operator ID</span>
+                            <strong>operator01</strong>
+                        </div>
+
+
+                        <div class="centre-demo-row">
+                            <span>Password</span>
+                            <strong>centre123</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="centre-login-warning">
+
+                        <span>ℹ️</span>
+
+                        <p>
+                            This is a frontend-only prototype.
+                            No real procurement centre authentication is performed.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="../js/centre-login.js"></script>
+
+</body>
+
+</html>

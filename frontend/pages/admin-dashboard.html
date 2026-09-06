@@ -1,0 +1,1049 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    />
+
+    <meta
+        name="description"
+        content="PaddySetu administration dashboard"
+    />
+
+    <title>Admin Dashboard — PaddySetu</title>
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/utility.css" />
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="../css/admin.css" />
+</head>
+
+<body>
+
+    <div class="admin-dashboard-layout">
+
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+        <aside class="admin-sidebar">
+
+            <a
+                href="admin-dashboard.html"
+                class="dashboard-brand"
+            >
+
+                <div class="dashboard-brand-icon">
+                    🌾
+                </div>
+
+                <div>
+                    <strong>PaddySetu</strong>
+                    <span>Admin Portal</span>
+                </div>
+
+            </a>
+
+
+            <nav class="admin-sidebar-nav">
+
+                <a
+                    href="admin-dashboard.html"
+                    class="admin-nav-link active"
+                >
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+
+                <a
+                    href="admin-centres.html"
+                    class="admin-nav-link"
+                >
+                    <span>🏢</span>
+                    Centres
+                </a>
+
+
+                <a
+                    href="admin-analytics.html"
+                    class="admin-nav-link"
+                >
+                    <span>📊</span>
+                    Analytics
+                </a>
+
+
+                <a
+                    href="admin-centres.html"
+                    class="admin-nav-link"
+                >
+                    <span>⚙</span>
+                    Capacity Settings
+                </a>
+
+            </nav>
+
+
+            <div class="admin-sidebar-bottom">
+
+                <div class="admin-user-mini">
+
+                    <div class="admin-mini-avatar">
+                        AD
+                    </div>
+
+                    <div>
+                        <strong>
+                            System Admin
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="admin-sidebar-logout"
+                    id="adminLogoutButton"
+                >
+                    ↪ Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =====================================================
+             MAIN
+        ====================================================== -->
+
+        <main class="admin-dashboard-main">
+
+
+            <!-- =================================================
+                 HEADER
+            ================================================== -->
+
+            <header class="admin-dashboard-header">
+
+                <div>
+
+                    <p class="admin-dashboard-eyebrow">
+                        ADMINISTRATION / प्रशासन
+                    </p>
+
+                    <h1>
+                        Procurement Dashboard
+                    </h1>
+
+                    <p>
+                        Monitor centre workload and procurement operations.
+                    </p>
+
+                </div>
+
+
+                <div class="admin-header-actions">
+
+                    <div class="system-status">
+
+                        <span class="system-dot"></span>
+
+                        System Active
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="admin-refresh-button"
+                        id="refreshDashboardButton"
+                    >
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 TOP STATS
+            ================================================== -->
+
+            <section class="admin-stat-grid">
+
+
+                <!-- Total Centres -->
+
+                <article class="admin-stat-card">
+
+                    <div class="admin-stat-top">
+
+                        <span class="admin-stat-icon">
+                            🏢
+                        </span>
+
+                        <span class="admin-stat-badge">
+                            District
+                        </span>
+
+                    </div>
+
+
+                    <div class="admin-stat-label">
+                        Total Centres
+                    </div>
+
+                    <div class="admin-stat-value">
+                        20
+                    </div>
+
+                    <p>
+                        Registered procurement centres
+                    </p>
+
+                </article>
+
+
+
+                <!-- Active Centres -->
+
+                <article class="admin-stat-card">
+
+                    <div class="admin-stat-top">
+
+                        <span class="admin-stat-icon">
+                            ✓
+                        </span>
+
+                        <span class="admin-stat-badge success">
+                            Operational
+                        </span>
+
+                    </div>
+
+
+                    <div class="admin-stat-label">
+                        Active Centres
+                    </div>
+
+                    <div class="admin-stat-value">
+                        18
+                    </div>
+
+                    <p>
+                        2 centres temporarily inactive
+                    </p>
+
+                </article>
+
+
+
+                <!-- Queue -->
+
+                <article class="admin-stat-card">
+
+                    <div class="admin-stat-top">
+
+                        <span class="admin-stat-icon">
+                            👥
+                        </span>
+
+                        <span class="admin-stat-badge warning">
+                            Live
+                        </span>
+
+                    </div>
+
+
+                    <div class="admin-stat-label">
+                        Farmers in Queue
+                    </div>
+
+                    <div
+                        class="admin-stat-value"
+                        id="adminQueueCount"
+                    >
+                        73
+                    </div>
+
+                    <p>
+                        Across all active centres
+                    </p>
+
+                </article>
+
+
+
+                <!-- Pending Weight -->
+
+                <article class="admin-stat-card">
+
+                    <div class="admin-stat-top">
+
+                        <span class="admin-stat-icon">
+                            ⚖
+                        </span>
+
+                        <span class="admin-stat-badge">
+                            Estimated
+                        </span>
+
+                    </div>
+
+
+                    <div class="admin-stat-label">
+                        Pending Quantity
+                    </div>
+
+                    <div
+                        class="admin-stat-value"
+                        id="adminPendingQuantity"
+                    >
+                        1,286 Q
+                    </div>
+
+                    <p>
+                        Expected crop remaining in queues
+                    </p>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ALERT
+            ================================================== -->
+
+            <section class="admin-load-alert">
+
+                <div class="load-alert-icon">
+                    !
+                </div>
+
+
+                <div class="load-alert-content">
+
+                    <strong>
+                        High workload detected at Berasia Procurement Centre
+                    </strong>
+
+                    <p>
+                        Queue load is higher than nearby centres.
+                        Farmers can be recommended lower-load centres
+                        during new bookings.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="admin-centres.html"
+                    class="load-alert-link"
+                >
+                    View Centre →
+                </a>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 MAIN DASHBOARD GRID
+            ================================================== -->
+
+            <section class="admin-dashboard-grid">
+
+
+                <!-- =================================================
+                     CENTRE LOAD OVERVIEW
+                ================================================== -->
+
+                <article class="admin-dashboard-card centre-overview-card">
+
+                    <div class="admin-card-heading">
+
+                        <div>
+
+                            <p class="admin-dashboard-eyebrow">
+                                LIVE OPERATIONS
+                            </p>
+
+                            <h2>
+                                Centre Load Overview
+                            </h2>
+
+                        </div>
+
+
+                        <a
+                            href="admin-centres.html"
+                            class="admin-text-link"
+                        >
+                            View All
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="centre-load-list">
+
+
+                        <!-- Berasia -->
+
+                        <div class="centre-load-item">
+
+                            <div class="centre-load-main">
+
+                                <div class="centre-load-icon">
+                                    B
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Berasia Procurement Centre
+                                    </strong>
+
+                                    <span>
+                                        Berasia, Bhopal
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="centre-load-metrics">
+
+                                <div>
+                                    <span>Queue</span>
+                                    <strong>24</strong>
+                                </div>
+
+                                <div>
+                                    <span>Pending</span>
+                                    <strong>412 Q</strong>
+                                </div>
+
+                                <div>
+                                    <span>Speed</span>
+                                    <strong>20 Q/hr</strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="centre-load-status high">
+                                High Load
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Phanda -->
+
+                        <div class="centre-load-item">
+
+                            <div class="centre-load-main">
+
+                                <div class="centre-load-icon">
+                                    P
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Phanda Procurement Centre
+                                    </strong>
+
+                                    <span>
+                                        Phanda, Bhopal
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="centre-load-metrics">
+
+                                <div>
+                                    <span>Queue</span>
+                                    <strong>15</strong>
+                                </div>
+
+                                <div>
+                                    <span>Pending</span>
+                                    <strong>246 Q</strong>
+                                </div>
+
+                                <div>
+                                    <span>Speed</span>
+                                    <strong>25 Q/hr</strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="centre-load-status medium">
+                                Medium
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Eintkhedi -->
+
+                        <div class="centre-load-item">
+
+                            <div class="centre-load-main">
+
+                                <div class="centre-load-icon">
+                                    E
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Eintkhedi Procurement Centre
+                                    </strong>
+
+                                    <span>
+                                        Eintkhedi, Bhopal
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="centre-load-metrics">
+
+                                <div>
+                                    <span>Queue</span>
+                                    <strong>8</strong>
+                                </div>
+
+                                <div>
+                                    <span>Pending</span>
+                                    <strong>124 Q</strong>
+                                </div>
+
+                                <div>
+                                    <span>Speed</span>
+                                    <strong>22 Q/hr</strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="centre-load-status low">
+                                Low Load
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     PROCUREMENT SUMMARY
+                ================================================== -->
+
+                <article class="admin-dashboard-card">
+
+                    <div class="admin-card-heading">
+
+                        <div>
+
+                            <p class="admin-dashboard-eyebrow">
+                                TODAY
+                            </p>
+
+                            <h2>
+                                Procurement Summary
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-summary-list">
+
+
+                        <div class="admin-summary-row">
+
+                            <span>
+                                Farmers Processed
+                            </span>
+
+                            <strong>
+                                146
+                            </strong>
+
+                        </div>
+
+
+                        <div class="admin-summary-row">
+
+                            <span>
+                                Paddy Procured
+                            </span>
+
+                            <strong>
+                                2,460 Q
+                            </strong>
+
+                        </div>
+
+
+                        <div class="admin-summary-row">
+
+                            <span>
+                                Completed Tokens
+                            </span>
+
+                            <strong>
+                                138
+                            </strong>
+
+                        </div>
+
+
+                        <div class="admin-summary-row">
+
+                            <span>
+                                Active Tokens
+                            </span>
+
+                            <strong class="admin-green-text">
+                                73
+                            </strong>
+
+                        </div>
+
+
+                        <div class="admin-summary-row">
+
+                            <span>
+                                Avg. Processing Rate
+                            </span>
+
+                            <strong>
+                                22 Q/hr
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     QUICK ACTIONS
+                ================================================== -->
+
+                <article class="admin-dashboard-card">
+
+                    <div class="admin-card-heading">
+
+                        <div>
+
+                            <p class="admin-dashboard-eyebrow">
+                                ADMIN TOOLS
+                            </p>
+
+                            <h2>
+                                Quick Actions
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-quick-actions">
+
+
+                        <a
+                            href="admin-centres.html"
+                            class="admin-action-card"
+                        >
+
+                            <span class="admin-action-icon">
+                                🏢
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Manage Centres
+                                </strong>
+
+                                <span>
+                                    View centre status and load
+                                </span>
+                            </div>
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+
+
+                        <a
+                            href="admin-analytics.html"
+                            class="admin-action-card"
+                        >
+
+                            <span class="admin-action-icon">
+                                📊
+                            </span>
+
+                            <div>
+                                <strong>
+                                    View Analytics
+                                </strong>
+
+                                <span>
+                                    Procurement performance
+                                </span>
+                            </div>
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+
+
+                        <a
+                            href="admin-centres.html"
+                            class="admin-action-card"
+                        >
+
+                            <span class="admin-action-icon">
+                                ⚙
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Capacity Settings
+                                </strong>
+
+                                <span>
+                                    Adjust demo processing speed
+                                </span>
+                            </div>
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     SYSTEM DISTRIBUTION
+                ================================================== -->
+
+                <article class="admin-dashboard-card">
+
+                    <div class="admin-card-heading">
+
+                        <div>
+
+                            <p class="admin-dashboard-eyebrow">
+                                LOAD DISTRIBUTION
+                            </p>
+
+                            <h2>
+                                Centre Utilization
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="utilization-list">
+
+
+                        <div class="utilization-item">
+
+                            <div class="utilization-heading">
+
+                                <span>
+                                    Berasia
+                                </span>
+
+                                <strong>
+                                    88%
+                                </strong>
+
+                            </div>
+
+                            <div class="utilization-track">
+
+                                <div
+                                    class="utilization-fill high"
+                                    style="width:88%"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="utilization-item">
+
+                            <div class="utilization-heading">
+
+                                <span>
+                                    Phanda
+                                </span>
+
+                                <strong>
+                                    61%
+                                </strong>
+
+                            </div>
+
+                            <div class="utilization-track">
+
+                                <div
+                                    class="utilization-fill medium"
+                                    style="width:61%"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="utilization-item">
+
+                            <div class="utilization-heading">
+
+                                <span>
+                                    Eintkhedi
+                                </span>
+
+                                <strong>
+                                    34%
+                                </strong>
+
+                            </div>
+
+                            <div class="utilization-track">
+
+                                <div
+                                    class="utilization-fill low"
+                                    style="width:34%"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="admin-helper-text">
+
+                        Demo utilization is calculated from mock
+                        queue load and centre processing capacity.
+
+                    </p>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     RECENT ACTIVITY
+                ================================================== -->
+
+                <article class="admin-dashboard-card recent-activity-card">
+
+                    <div class="admin-card-heading">
+
+                        <div>
+
+                            <p class="admin-dashboard-eyebrow">
+                                SYSTEM ACTIVITY
+                            </p>
+
+                            <h2>
+                                Recent Activity
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-activity-list">
+
+
+                        <div class="admin-activity-item">
+
+                            <span class="activity-dot success"></span>
+
+                            <div>
+
+                                <strong>
+                                    Token P-018 completed
+                                </strong>
+
+                                <span>
+                                    Berasia Procurement Centre
+                                </span>
+
+                            </div>
+
+                            <time>
+                                5 min ago
+                            </time>
+
+                        </div>
+
+
+
+                        <div class="admin-activity-item">
+
+                            <span class="activity-dot warning"></span>
+
+                            <div>
+
+                                <strong>
+                                    Berasia centre entered high-load condition
+                                </strong>
+
+                                <span>
+                                    Queue pending quantity increased
+                                </span>
+
+                            </div>
+
+                            <time>
+                                12 min ago
+                            </time>
+
+                        </div>
+
+
+
+                        <div class="admin-activity-item">
+
+                            <span class="activity-dot success"></span>
+
+                            <div>
+
+                                <strong>
+                                    Procurement accepted
+                                </strong>
+
+                                <span>
+                                    Token P-024 • 18.4 Quintal
+                                </span>
+
+                            </div>
+
+                            <time>
+                                18 min ago
+                            </time>
+
+                        </div>
+
+
+
+                        <div class="admin-activity-item">
+
+                            <span class="activity-dot info"></span>
+
+                            <div>
+
+                                <strong>
+                                    New token booked
+                                </strong>
+
+                                <span>
+                                    Phanda Procurement Centre
+                                </span>
+
+                            </div>
+
+                            <time>
+                                24 min ago
+                            </time>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 DISCLAIMER
+            ================================================== -->
+
+            <p class="admin-dashboard-footer">
+
+                PaddySetu hackathon prototype •
+                All centre, queue and procurement values shown here
+                are mock/demo data.
+
+            </p>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- JS -->
+
+    <script src="../js/admin-dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+.queue-hero {
+  background: linear-gradient(140deg, var(--green-900), #24694a);
+  color: #fff;
+  border-radius: 20px;
+  padding: 28px;
+}
+.queue-hero .stat-grid {
+  margin-top: 20px;
+}
+.queue-hero .stat-card {
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+.queue-hero .stat-card .label {
+  color: #dcece1;
+}
+.queue-hero .stat-card .value {
+  color: #fff;
+}
+.arrival-window {
+  font-size: clamp(34px, 6vw, 56px);
+  font-weight: 950;
+  line-height: 1.05;
+  margin: 8px 0;
+}
+.guidance-card {
+  border-left: 6px solid var(--green-600);
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+.queue-list {
+  display: grid;
+  gap: 10px;
+}
+.queue-item {
+  display: grid;
+  grid-template-columns: 100px 1fr 140px;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+}
+.queue-item.current {
+  border-color: var(--gold);
+  background: #fffaf0;
+}
+.progress-track {
+  height: 12px;
+  background: #e7eee9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  background: var(--green-600);
+  border-radius: inherit;
+  transition: width 0.3s;
+}
+.status-timeline {
+  display: grid;
+  gap: 0;
+}
+.status-step {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 12px;
+  min-height: 72px;
+}
+.status-marker {
+  position: relative;
+}
+.status-marker:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15px;
+  width: 2px;
+  height: 100%;
+  background: #dbe5de;
+}
+.status-dot {
+  position: relative;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e5ece7;
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 1px #ccd8cf;
+}
+.status-step.done .status-dot,
+.status-step.active .status-dot {
+  background: var(--green-600);
+}
+.status-step.active .status-dot {
+  box-shadow: 0 0 0 4px rgba(59, 132, 95, 0.15);
+}
+.status-content {
+  padding: 4px 0 18px;
+}
+.status-content strong {
+  display: block;
+}
+@media (max-width: 700px) {
+  .queue-item {
+    grid-template-columns: 1fr;
+  }
+  .queue-hero {
+    padding: 20px;
+  }
+}

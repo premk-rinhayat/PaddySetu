@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Frontend-only hackathon prototype for farmer-centric paddy procurement"
+    />
+    <title>Farmer Registration — PaddySetu</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/utility.css" />
+    <link rel="stylesheet" href="../css/auth.css" />
+  </head>
+  <body>
+    <div data-header></div>
+    <main class="page-main">
+      <div class="container">
+        <div class="card">
+          <div class="eyebrow">Step 1 • Farmer Registration / किसान पंजीयन</div>
+          <h1 class="page-title">Create farmer account</h1>
+          <p class="page-subtitle">
+            Mock registration only. No real Aadhaar verification is performed.
+          </p>
+          <form id="farmerRegistrationForm" class="form-grid">
+            <div class="field full">
+              <label>Farmer Name</label
+              ><input name="name" required placeholder="e.g. Ramesh Patel" />
+            </div>
+            <div class="field">
+              <label>Aadhaar Number</label
+              ><input
+                name="aadhaar"
+                inputmode="numeric"
+                maxlength="14"
+                required
+                placeholder="12 digits"
+              /><span class="helper">Format validation only</span>
+            </div>
+            <div class="field">
+              <label>Mobile Number</label
+              ><input
+                name="mobile"
+                inputmode="numeric"
+                maxlength="10"
+                required
+                placeholder="10 digits"
+              />
+            </div>
+            <div class="field">
+              <label>State</label
+              ><select name="state" required>
+                <option>Madhya Pradesh</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>District</label
+              ><select name="district" required>
+                <option>Bhopal</option>
+                <option>Sehore</option>
+                <option>Raisen</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Tehsil / Sub-District</label
+              ><input name="tehsil" required value="Berasia" />
+            </div>
+            <div class="field">
+              <label>Village</label
+              ><input name="village" required value="Berasia" />
+            </div>
+            <div class="field">
+              <label>Password</label
+              ><input type="password" name="password" required minlength="6" />
+            </div>
+            <div class="field">
+              <label>Confirm Password</label
+              ><input
+                type="password"
+                name="confirmPassword"
+                required
+                minlength="6"
+              />
+            </div>
+            <div class="field full">
+              <div id="formMessage" class="error"></div>
+              <div class="button-row">
+                <a class="btn btn-secondary" href="../index.html">Back</a
+                ><button class="btn btn-primary">
+                  Verify Mobile with Mock OTP
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="../js/storage.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/farmer-registration.js"></script>
+  </body>
+</html>

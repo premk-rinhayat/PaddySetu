@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    />
+
+    <meta
+        name="description"
+        content="Farmer profile for PaddySetu digital procurement prototype"
+    />
+
+    <title>My Profile — PaddySetu</title>
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/utility.css" />
+
+    <!-- Profile CSS -->
+    <link rel="stylesheet" href="../css/profile.css" />
+</head>
+
+<body>
+
+    <!-- Existing PaddySetu header -->
+    <div data-header></div>
+
+
+    <main class="profile-page">
+
+        <div class="container">
+
+            <!-- =====================================================
+                 BACK
+            ====================================================== -->
+
+            <a
+                href="dashboard.html"
+                class="profile-back-link"
+            >
+                ← Back to Dashboard
+            </a>
+
+
+            <!-- =====================================================
+                 PAGE HEADER
+            ====================================================== -->
+
+            <section class="profile-heading">
+
+                <div>
+                    <p class="profile-eyebrow">
+                        FARMER PROFILE / किसान प्रोफ़ाइल
+                    </p>
+
+                    <h1>
+                        My Profile
+                    </h1>
+
+                    <p class="profile-subtitle">
+                        Manage your personal and procurement information.
+                    </p>
+                </div>
+
+
+                <button
+                    type="button"
+                    class="profile-edit-button"
+                    id="editProfileButton"
+                >
+                    ✎ Edit Profile
+                </button>
+
+            </section>
+
+
+            <!-- =====================================================
+                 MAIN FARMER CARD
+            ====================================================== -->
+
+            <section class="farmer-account-card">
+
+                <div class="farmer-account-left">
+
+                    <!-- Avatar -->
+
+                    <div class="profile-avatar-wrapper">
+
+                        <div
+                            class="profile-avatar"
+                            id="profileInitials"
+                        >
+                            RP
+                        </div>
+
+                        <div class="avatar-camera">
+                            ◉
+                        </div>
+
+                    </div>
+
+
+                    <!-- Farmer identity -->
+
+                    <div class="farmer-account-info">
+
+                        <p class="profile-section-label">
+                            FARMER ACCOUNT
+                        </p>
+
+                        <h2 id="profileFarmerName">
+                            Ramesh Patel
+                        </h2>
+
+                        <p
+                            class="profile-location"
+                            id="profileLocation"
+                        >
+                            Berasia, Madhya Pradesh
+                        </p>
+
+
+                        <div class="profile-badges">
+
+                            <span class="profile-badge verified">
+                                ✓ Mobile Verified
+                            </span>
+
+                            <span
+                                class="profile-badge farmer-id"
+                                id="profileFarmerIdBadge"
+                            >
+                                Farmer ID: MP-BPL-FRM-2026-10245
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Account status -->
+
+                <div class="account-status-box">
+
+                    <span>
+                        Account Status
+                    </span>
+
+                    <strong>
+                        Active
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 PROFILE GRID
+            ====================================================== -->
+
+            <section class="profile-content-grid">
+
+
+                <!-- =================================================
+                     PERSONAL DETAILS
+                ================================================== -->
+
+                <article class="profile-card personal-card">
+
+                    <div class="profile-card-header">
+
+                        <div class="profile-card-icon">
+                            ♙
+                        </div>
+
+                        <div>
+
+                            <p class="profile-section-label">
+                                PERSONAL DETAILS
+                            </p>
+
+                            <h3>
+                                Basic Information
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-divider"></div>
+
+
+                    <div class="detail-grid">
+
+
+                        <!-- Full Name -->
+
+                        <div class="detail-box">
+
+                            <span>
+                                Full Name
+                            </span>
+
+                            <strong id="detailFarmerName">
+                                Ramesh Patel
+                            </strong>
+
+                            <input
+                                type="text"
+                                id="editFarmerName"
+                                class="profile-edit-input"
+                            />
+
+                        </div>
+
+
+                        <!-- Mobile -->
+
+                        <div class="detail-box">
+
+                            <span>
+                                Mobile Number
+                            </span>
+
+                            <strong id="detailMobile">
+                                98XXXXXX12
+                            </strong>
+
+                            <input
+                                type="text"
+                                id="editMobile"
+                                class="profile-edit-input"
+                            />
+
+                        </div>
+
+
+                        <!-- Tehsil -->
+
+                        <div class="detail-box">
+
+                            <span>
+                                Tehsil / Sub-District
+                            </span>
+
+                            <strong id="detailTehsil">
+                                Berasia
+                            </strong>
+
+                            <input
+                                type="text"
+                                id="editTehsil"
+                                class="profile-edit-input"
+                            />
+
+                        </div>
+
+
+                        <!-- Village -->
+
+                        <div class="detail-box">
+
+                            <span>
+                                Village
+                            </span>
+
+                            <strong id="detailVillage">
+                                Berasia
+                            </strong>
+
+                            <input
+                                type="text"
+                                id="editVillage"
+                                class="profile-edit-input"
+                            />
+
+                        </div>
+
+
+                        <!-- State -->
+
+                        <div class="detail-box">
+
+                            <span>
+                                State
+                            </span>
+
+                            <strong id="detailState">
+                                Madhya Pradesh
+                            </strong>
+
+                            <input
+                                type="text"
+                                id="editState"
+                                class="profile-edit-input"
+                            />
+
+                        </div>
+
+
+                        <!-- District -->
+
+                        <div class="detail-box">
+
+                            <span>
+                                District
+                            </span>
+
+                            <strong id="detailDistrict">
+                                Bhopal
+                            </strong>
+
+                            <input
+                                type="text"
+                                id="editDistrict"
+                                class="profile-edit-input"
+                            />
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Edit Actions -->
+
+                    <div
+                        class="edit-profile-actions"
+                        id="editProfileActions"
+                    >
+
+                        <button
+                            type="button"
+                            class="profile-save-button"
+                            id="saveProfileButton"
+                        >
+                            Save Changes
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="profile-cancel-button"
+                            id="cancelEditButton"
+                        >
+                            Cancel
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     FARMER / PROCUREMENT DETAILS
+                ================================================== -->
+
+                <article class="profile-card">
+
+                    <div class="profile-card-header">
+
+                        <div class="profile-card-icon">
+                            🌱
+                        </div>
+
+                        <div>
+
+                            <p class="profile-section-label">
+                                FARMER DETAILS
+                            </p>
+
+                            <h3>
+                                Procurement Profile
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-divider"></div>
+
+
+                    <div class="detail-grid">
+
+
+                        <div class="detail-box">
+
+                            <span>
+                                Farmer ID
+                            </span>
+
+                            <strong
+                                class="small-id-text"
+                                id="detailFarmerId"
+                            >
+                                MP-BPL-FRM-2026-10245
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <span>
+                                Eligible Quantity
+                            </span>
+
+                            <strong id="detailEligibleQuantity">
+                                60 Quintal
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <span>
+                                Registered Land
+                            </span>
+
+                            <strong id="detailRegisteredLand">
+                                5.5 Acre
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <span>
+                                Land Parcels
+                            </span>
+
+                            <strong id="detailLandParcels">
+                                2
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <span>
+                                Current Crop
+                            </span>
+
+                            <strong id="detailCrop">
+                                Paddy
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <span>
+                                ❤️ Remaining Attempts
+                            </span>
+
+                            <strong>
+                                3
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     SECURITY & ACCESS
+                ================================================== -->
+
+                <article class="profile-card account-card">
+
+                    <div class="profile-card-header">
+
+                        <div class="profile-card-icon">
+                            🛡
+                        </div>
+
+                        <div>
+
+                            <p class="profile-section-label">
+                                ACCOUNT
+                            </p>
+
+                            <h3>
+                                Security & Access
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-divider"></div>
+
+
+                    <button
+                        type="button"
+                        class="account-option"
+                        id="changePasswordButton"
+                    >
+
+                        <span class="account-option-icon">
+                            🔒
+                        </span>
+
+                        <span>
+                            Change Password
+                        </span>
+
+                        <span class="account-option-arrow">
+                            ›
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="account-option"
+                        id="notificationButton"
+                    >
+
+                        <span class="account-option-icon">
+                            🔔
+                        </span>
+
+                        <span>
+                            Notification Preferences
+                        </span>
+
+                        <span class="account-option-arrow">
+                            ›
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="account-option"
+                        id="languageButton"
+                    >
+
+                        <span class="account-option-icon">
+                            अ
+                        </span>
+
+                        <span>
+                            Language
+                        </span>
+
+                        <span
+                            class="account-option-value"
+                            id="languageValue"
+                        >
+                            English
+                        </span>
+
+                    </button>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     PROCUREMENT SUMMARY
+                ================================================== -->
+
+                <article class="profile-card procurement-summary-card">
+
+                    <div class="profile-card-header">
+
+                        <div class="profile-card-icon">
+                            📈
+                        </div>
+
+                        <div>
+
+                            <p class="profile-section-label">
+                                ACTIVITY
+                            </p>
+
+                            <h3>
+                                Procurement Summary
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-divider"></div>
+
+
+                    <div class="detail-grid">
+
+
+                        <div class="detail-box">
+
+                            <span>
+                                Total Procurements
+                            </span>
+
+                            <strong id="summaryTotal">
+                                6
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <span>
+                                Completed
+                            </span>
+
+                            <strong id="summaryCompleted">
+                                5
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <span>
+                                Active
+                            </span>
+
+                            <strong
+                                class="green-value"
+                                id="summaryActive"
+                            >
+                                1
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-box">
+
+                            <span>
+                                Total Quantity
+                            </span>
+
+                            <strong id="summaryQuantity">
+                                214 Quintal
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     LOGOUT
+                ================================================== -->
+
+                <article class="profile-card logout-card">
+
+                    <div class="logout-heading">
+
+                        <div class="logout-icon">
+                            ↪
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Logout
+                            </strong>
+
+                            <p>
+                                Sign out from this PaddySetu account.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="logout-button"
+                        id="logoutButton"
+                    >
+                        Logout
+                        <span>→</span>
+                    </button>
+
+                </article>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- Toast -->
+
+    <div
+        class="profile-toast"
+        id="profileToast"
+    ></div>
+
+
+    <!-- Existing project scripts -->
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/app.js"></script>
+
+    <!-- Profile -->
+    <script src="../js/profile.js"></script>
+
+</body>
+</html>

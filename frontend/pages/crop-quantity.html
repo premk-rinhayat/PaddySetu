@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Frontend-only hackathon prototype for farmer-centric paddy procurement"
+    />
+    <title>Crop Quantity Range — PaddySetu</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/utility.css" />
+    <link rel="stylesheet" href="../css/slot.css" />
+  </head>
+  <body>
+    <div data-header></div>
+    <main class="page-main">
+      <div class="container">
+        <div class="eyebrow">Step 7 • Expected Quantity Range</div>
+        <h1 class="page-title">How much paddy may you bring?</h1>
+        <div class="quantity-limit">
+          <div class="muted">
+            Eligible Procurement Limit / अधिकतम पात्र मात्रा
+          </div>
+          <div class="kpi" id="eligibleLimit">60 Quintal</div>
+          <p class="helper">
+            Enter a range because exact weight will be known only after
+            weighing.
+          </p>
+        </div>
+        <section class="card mt-3">
+          <form id="quantityForm" class="form-grid">
+            <div class="field">
+              <label>Minimum Expected Quantity</label
+              ><input
+                id="minQuantity"
+                type="number"
+                step="0.1"
+                min="0.1"
+                value="50"
+                required
+              /><span class="helper">Quintal</span>
+            </div>
+            <div class="field">
+              <label>Maximum Expected Quantity</label
+              ><input
+                id="maxQuantity"
+                type="number"
+                step="0.1"
+                min="0.1"
+                value="60"
+                required
+              /><span class="helper">Quintal</span>
+            </div>
+            <div class="field full">
+              <p id="quantityMessage" class="error"></p>
+              <div class="button-row">
+                <a class="btn btn-secondary" href="slot-booking.html">Back</a
+                ><button class="btn btn-primary">Continue to Token</button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+    <script src="../js/storage.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/quantity.js"></script>
+  </body>
+</html>

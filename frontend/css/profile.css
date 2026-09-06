@@ -1,0 +1,777 @@
+/* =========================================================
+   PADDYSETU FARMER PROFILE
+========================================================= */
+
+.profile-page {
+    padding: 42px 0 80px;
+}
+
+
+/* =========================================================
+   BACK LINK
+========================================================= */
+
+.profile-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 30px;
+
+    color: var(--text-muted, #64748b);
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.profile-back-link:hover {
+    color: var(--primary, #15803d);
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.profile-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+
+    margin-bottom: 30px;
+}
+
+.profile-eyebrow,
+.profile-section-label {
+    margin: 0 0 7px;
+
+    color: #16a34a;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+}
+
+.profile-heading h1 {
+    margin: 0;
+
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.1;
+}
+
+.profile-subtitle {
+    margin: 9px 0 0;
+
+    color: var(--text-muted, #64748b);
+
+    font-size: 15px;
+}
+
+.profile-edit-button {
+    border: 0;
+
+    padding: 14px 22px;
+
+    border-radius: 12px;
+
+    background: #16a34a;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.profile-edit-button:hover {
+    background: #15803d;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   FARMER ACCOUNT HERO CARD
+========================================================= */
+
+.farmer-account-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 34px;
+
+    margin-bottom: 24px;
+
+    border: 1px solid rgba(22, 163, 74, 0.25);
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(22, 163, 74, 0.10),
+            rgba(22, 163, 74, 0.03)
+        );
+
+    box-shadow: 0 14px 40px rgba(15, 23, 42, 0.05);
+}
+
+.farmer-account-left {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+
+/* =========================================================
+   PROFILE AVATAR
+========================================================= */
+
+.profile-avatar-wrapper {
+    position: relative;
+}
+
+.profile-avatar {
+    width: 88px;
+    height: 88px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #15803d
+        );
+
+    color: #ffffff;
+
+    font-size: 25px;
+    font-weight: 900;
+
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.15);
+}
+
+.avatar-camera {
+    position: absolute;
+
+    right: -5px;
+    bottom: -6px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   ACCOUNT INFORMATION
+========================================================= */
+
+.farmer-account-info h2 {
+    margin: 0 0 6px;
+
+    font-size: 24px;
+}
+
+.profile-location {
+    margin: 0;
+
+    color: var(--text-muted, #64748b);
+
+    font-size: 14px;
+}
+
+.profile-badges {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: 14px;
+}
+
+.profile-badge {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 28px;
+
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.profile-badge.verified {
+    background: rgba(22, 163, 74, 0.10);
+    color: #15803d;
+
+    border: 1px solid rgba(22, 163, 74, 0.25);
+}
+
+.profile-badge.farmer-id {
+    background: #f8fafc;
+    color: #64748b;
+
+    border: 1px solid #e2e8f0;
+}
+
+
+/* =========================================================
+   ACCOUNT STATUS
+========================================================= */
+
+.account-status-box {
+    min-width: 135px;
+
+    padding: 17px 20px;
+
+    text-align: center;
+
+    border-radius: 13px;
+
+    border: 1px solid #dcfce7;
+
+    background: rgba(255,255,255,0.65);
+}
+
+.account-status-box span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+.account-status-box strong {
+    color: #16a34a;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.profile-content-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.4fr)
+        minmax(0, 1.4fr)
+        minmax(270px, 0.95fr);
+
+    gap: 20px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.profile-card {
+    padding: 22px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+}
+
+.profile-card-header {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.profile-card-header h3 {
+    margin: 0;
+
+    font-size: 16px;
+}
+
+.profile-card-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: rgba(22, 163, 74, 0.10);
+
+    color: #16a34a;
+
+    font-size: 19px;
+}
+
+.profile-divider {
+    height: 1px;
+
+    margin: 18px 0;
+
+    background: #e2e8f0;
+}
+
+
+/* =========================================================
+   DETAIL GRID
+========================================================= */
+
+.detail-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+.detail-box {
+    min-height: 74px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 13px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 11px;
+
+    background: #f8fafc;
+}
+
+.detail-box span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #64748b;
+
+    font-size: 10px;
+}
+
+.detail-box strong {
+    color: #0f172a;
+
+    font-size: 13px;
+    line-height: 1.4;
+
+    word-break: break-word;
+}
+
+.small-id-text {
+    font-size: 11px !important;
+}
+
+.green-value {
+    color: #16a34a !important;
+}
+
+
+/* =========================================================
+   EDIT PROFILE
+========================================================= */
+
+.profile-edit-input {
+    display: none;
+
+    width: 100%;
+
+    padding: 9px 10px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #0f172a;
+
+    font: inherit;
+    font-size: 13px;
+
+    outline: none;
+}
+
+.profile-edit-input:focus {
+    border-color: #16a34a;
+
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.10);
+}
+
+
+body.profile-editing .personal-card .detail-box strong {
+    display: none;
+}
+
+body.profile-editing .profile-edit-input {
+    display: block;
+}
+
+
+.edit-profile-actions {
+    display: none;
+
+    gap: 10px;
+
+    margin-top: 16px;
+}
+
+body.profile-editing .edit-profile-actions {
+    display: flex;
+}
+
+
+.profile-save-button,
+.profile-cancel-button {
+    padding: 10px 16px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.profile-save-button {
+    border: 1px solid #16a34a;
+
+    background: #16a34a;
+    color: #ffffff;
+}
+
+.profile-cancel-button {
+    border: 1px solid #cbd5e1;
+
+    background: #ffffff;
+    color: #475569;
+}
+
+
+/* =========================================================
+   ACCOUNT OPTIONS
+========================================================= */
+
+.account-option {
+    width: 100%;
+
+    min-height: 55px;
+
+    display: grid;
+
+    grid-template-columns: 28px 1fr auto;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0;
+
+    border: 0;
+    border-bottom: 1px solid #e2e8f0;
+
+    background: transparent;
+
+    text-align: left;
+
+    color: #0f172a;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.account-option:last-child {
+    border-bottom: 0;
+}
+
+.account-option:hover {
+    color: #16a34a;
+}
+
+.account-option-icon {
+    color: #16a34a;
+
+    font-size: 16px;
+}
+
+.account-option-arrow,
+.account-option-value {
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   PROCUREMENT SUMMARY
+========================================================= */
+
+.procurement-summary-card {
+    grid-column: 1;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout-card {
+    grid-column: 1;
+
+    border-color: rgba(220, 38, 38, 0.18);
+}
+
+.logout-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.logout-heading strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 14px;
+}
+
+.logout-heading p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+.logout-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(220, 38, 38, 0.08);
+    color: #dc2626;
+
+    font-weight: 900;
+}
+
+.logout-button {
+    width: 100%;
+
+    margin-top: 17px;
+
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: 1px solid rgba(220, 38, 38, 0.20);
+    border-radius: 10px;
+
+    background: rgba(220, 38, 38, 0.04);
+
+    color: #dc2626;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.logout-button:hover {
+    background: rgba(220, 38, 38, 0.09);
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.profile-toast {
+    position: fixed;
+
+    right: 24px;
+    bottom: 24px;
+
+    z-index: 9999;
+
+    max-width: 330px;
+
+    padding: 13px 18px;
+
+    border-radius: 10px;
+
+    background: #0f172a;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.25);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: translateY(15px);
+
+    transition: 0.25s ease;
+}
+
+.profile-toast.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .profile-content-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .account-card {
+        grid-column: auto;
+    }
+
+    .procurement-summary-card {
+        grid-column: auto;
+    }
+
+    .logout-card {
+        grid-column: auto;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+
+    .profile-page {
+        padding-top: 26px;
+    }
+
+    .profile-heading {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .profile-edit-button {
+        width: 100%;
+    }
+
+    .farmer-account-card {
+        align-items: flex-start;
+        flex-direction: column;
+
+        padding: 22px;
+    }
+
+    .farmer-account-left {
+        align-items: flex-start;
+    }
+
+    .account-status-box {
+        width: 100%;
+
+        text-align: left;
+    }
+
+    .profile-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .procurement-summary-card,
+    .logout-card {
+        grid-column: auto;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .farmer-account-left {
+        flex-direction: column;
+    }
+
+    .profile-avatar {
+        width: 76px;
+        height: 76px;
+    }
+
+    .profile-card {
+        padding: 17px;
+    }
+
+}

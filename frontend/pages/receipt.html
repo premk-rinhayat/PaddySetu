@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Frontend-only hackathon prototype for farmer-centric paddy procurement"
+    />
+    <title>Procurement Receipt — PaddySetu</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/utility.css" />
+    <link rel="stylesheet" href="../css/receipt.css" />
+  </head>
+  <body>
+    <div data-header></div>
+    <main class="page-main">
+      <div class="container">
+        <section class="receipt-sheet">
+          <header class="receipt-header">
+            <div class="eyebrow">Procurement Receipt / उपार्जन रसीद</div>
+            <h1>Paddy Procurement Completed</h1>
+            <span class="demo-label"
+              >ALL RATES & MONEY VALUES ARE DEMO ONLY</span
+            >
+          </header>
+          <div class="receipt-body">
+            <div id="receiptData"></div>
+            <div class="button-row">
+              <button class="btn btn-primary" id="printReceipt">
+                Print Receipt</button
+              ><a class="btn btn-secondary" href="dashboard.html"
+                >Back to Dashboard</a
+              >
+            </div>
+          </div>
+        </section>
+        <p class="footer-note">
+          Hackathon prototype receipt. Not a legal or government procurement
+          document.
+        </p>
+      </div>
+    </main>
+    <script src="../js/storage.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/receipt.js"></script>
+  </body>
+</html>

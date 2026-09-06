@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Frontend-only hackathon prototype for farmer-centric paddy procurement"
+    />
+    <title>Procurement Registration — PaddySetu</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/utility.css" />
+    <link rel="stylesheet" href="../css/registration.css" />
+  </head>
+  <body>
+    <div data-header></div>
+    <main class="page-main">
+      <div class="container">
+        <div class="eyebrow">
+          Step 4 • Procurement Registration / उपार्जन पंजीयन
+        </div>
+        <h1 class="page-title">Register for the procurement season</h1>
+        <div class="grid-2">
+          <section class="card">
+            <form id="procurementForm" class="form-grid">
+              <div class="field">
+                <label>Procurement Season</label
+                ><select name="season">
+                  <option>Kharif 2026</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Crop</label
+                ><select name="crop">
+                  <option>Paddy</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label>Registered Land / Khasra</label
+                ><select name="landId" id="landId"></select>
+              </div>
+              <div class="field">
+                <label>Cultivated Paddy Area (Acre)</label
+                ><input
+                  id="cultivatedArea"
+                  name="cultivatedArea"
+                  type="number"
+                  min="0.1"
+                  step="0.1"
+                  value="3"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label>Expected Harvest Period</label
+                ><input
+                  name="harvestPeriod"
+                  value="10 Oct – 25 Oct 2026"
+                  required
+                />
+              </div>
+              <div class="field full">
+                <label>Bank Account Last 4 Digits</label
+                ><input
+                  name="bankLast4"
+                  maxlength="4"
+                  inputmode="numeric"
+                  value="3812"
+                  required
+                />
+              </div>
+              <div class="field full">
+                <label
+                  ><input type="checkbox" name="consent" value="yes" required />
+                  I confirm this is demo information for the hackathon
+                  prototype.</label
+                >
+              </div>
+              <div id="procMessage" class="error field full"></div>
+              <div class="field full">
+                <button class="btn btn-primary btn-block">
+                  Complete Procurement Registration
+                </button>
+              </div>
+            </form>
+          </section>
+          <aside class="calc-box">
+            <span class="demo-label">DEMO RULE — NOT GOVERNMENT POLICY</span>
+            <h2 class="section-title mt-2">
+              Maximum Eligible Procurement Quantity
+            </h2>
+            <div class="calc-result" id="eligibleResult">60 Quintal</div>
+            <p class="muted">
+              Prototype calculation: Cultivated Area ×
+              <strong>20 Quintal/Acre</strong>. Change this value from
+              <code>DEMO_CONFIG.procurementRule</code>.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </main>
+    <script src="../js/storage.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/procurement-registration.js"></script>
+  </body>
+</html>
